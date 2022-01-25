@@ -7,7 +7,7 @@ export default class Quiz extends Component {
 
     // initiating the local state
     state = {
-        quiestions: {
+        questions: {
             1: '1.In which one of the following page replacement policies, Belady’s anomaly may occur?',
             2: '2.In a binary tree with n nodes, every node has an odd number of descendants. Every node is considered to be its own descendant. What is the number of nodes in the tree that have exactly one child?',
             3: '3.How many 32K × 1 RAM chips are needed to provide a memory capacity of 256 K-bytes = ?',
