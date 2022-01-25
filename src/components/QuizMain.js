@@ -78,13 +78,13 @@ export default class Quiz extends Component {
     }
 
     render(){
-        let { quiestions, answers, correctAnswer, clickedAnswer, step, score } = this.state;
+        let { questions, answers, correctAnswer, clickedAnswer, step, score } = this.state;
         return(
             <div className="Content">
-                {step <= Object.keys(quiestions).length ? 
+                {step <= Object.keys(questions).length ? 
                     (<>
                         <Question
-                            question={quiestions[step]}
+                            question={questions[step]}
                         />
                         <Answer
                             answer={answers[step]}
@@ -96,14 +96,14 @@ export default class Quiz extends Component {
                         <button
                         className="NextStep"
                         disabled={
-                            clickedAnswer && Object.keys(quiestions).length >= step
+                            clickedAnswer && Object.keys(questions).length >= step
                             ? false : true
                         }
                         onClick={() => this.nextStep(step)}>Next</button>
                     </>) : (
                         <div className="finalPage">
                             <h1>You have completed the quiz!</h1>
-                            <p>Your score is: {score} of {Object.keys(quiestions).length}</p>
+                            <p>Your score is: {score} of {Object.keys(questions).length}</p>
                             <p>Thank you!</p>
                         </div>
                     )
